@@ -1,6 +1,5 @@
-require 'pry'
-
 class BoundingBox
+
   def initialize(start_x,start_y,width,height)
     @start_x = start_x
     @start_y = start_y
@@ -9,11 +8,11 @@ class BoundingBox
   end
 
   def width
-  @width
+    @width
   end
 
   def height
-  @height
+    @height
   end
 
   def left
@@ -25,24 +24,20 @@ class BoundingBox
   end
 
   def top
-  @start_y + height
+    @start_y + height
   end
 
   def bottom
-  @start_y
+    @start_y
   end
 
   def contains_point?(x,y)
-  #binding.pry
-  #returns true if the given (x,y) coordinate is within the box
-  if @start_x <= x && x<=(@width + @start_x) &&  @start_y <= y && y <= (@height + @start_y)
-    true
-  else
-    false
-  end
+    if @start_x <= x && x<=(@width + @start_x) &&  @start_y <= y && y <= (@height + @start_y)
+      true
+    else
+      false
+    end
   end
 
 end
 
-# box = BoundingBox.new(5,10,25,50)
-# box.contains_point?(6,14)
